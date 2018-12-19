@@ -1,0 +1,48 @@
+
+
+<html>
+    <head>
+        <title>local storage</title>
+     <link rel="stylesheet" type="text/css"  href="col.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+      <script>
+         
+        $(document).ready(function(){
+            var arr=[];
+
+            addColors = function(color){
+            arr.push(color);                  
+            };  
+
+            addToLocalStorage = function(){
+            	localStorage.setItem('data', JSON.stringify(arr));
+            	var data = JSON.parse(localStorage.getItem('data') ||'[]');
+            	console.log(JSON.stringify(data));
+            	var newHTML = [];
+				$.each(data, function(index, value) {
+				    newHTML.push('<li>' + value + '</li>');
+				});
+				$(".element").html(newHTML.join(""));
+            }
+
+            clearData = function(){
+            	arr = [];
+            	localStorage.setItem('data', JSON.stringify(arr));
+            	var newHTML = [];
+				$(".element").html(newHTML.join(""));
+
+            }       
+        });
+      
+      </script>
+    </head>
+    <body>
+        <button onclick="addColors('blue')" id="blue">blue</button>
+        <button onclick="addColors('green')" id="green">green</button>
+        <button onclick="addColors('red')" id="red">red</button>
+        <button onclick="addColors('yellow')" id="yellow">yellow</button><br><hr>
+        <button onclick="addToLocalStorage()" id="list">list</button>
+        <button onclick="clearData()" id="clear">clear</button>
+        <div class="element"></div>
+    </body>
+</html>
