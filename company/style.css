@@ -1,0 +1,43 @@
+body{
+    background-image: url("bak.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+
+}
+li{
+    text-align:center;
+}
+h1{
+    font-family: 'Unlock', cursive;
+}
+
+
+
+nav {
+
+	font-family: 'Unlock', cursive;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+ 
+  background: lightgrey;
+}
+footer .footerLinks ul{
+  list-style-type: none;  
+  padding-bottom:5px;
+
+
+  
+}
+footer .footerLinks ul li{  
+   float: left;
+}
+footer .footerLinks ul li a{ 
+    padding: 16px;
+    text-decoration: none;
+    color: black ;
+
+    font-family: 'Unlock', cursive;
+}
